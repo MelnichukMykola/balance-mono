@@ -9,12 +9,12 @@ import { toggleUserLogged } from '../store/userSlice'
 import showErrorMessage from '../utils/showErrorMessage'
 
 export const AuthClient = axios.create({
-  baseURL: `${config.API_URL}/auth`,
+  baseURL: `${import.meta.env.VITE_CLIENT_URL_PROD}/auth`,
   withCredentials: true,
 })
 
 const ResourceClient = axios.create({
-  baseURL: `${config.API_URL}/resource`,
+  baseURL: `${import.meta.env.VITE_CLIENT_URL_PROD}/resource`,
 })
 
 export const AuthContext = createContext({})
@@ -31,6 +31,7 @@ const AuthProvider = ({ children }) => {
       throw error
     }
   }
+
 
   const handleSignIn = async data => {
     console.log('sign-in')
