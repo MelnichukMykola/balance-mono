@@ -4,7 +4,7 @@ import { createContext, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import config from '../config'
 import inMemoryJWT from '../services/inMemoryJWT'
-import { handleFakeData, setStatusLoading } from '../store/trackingSlice'
+import { handleFakeData } from '../store/trackingSlice'
 import { toggleUserLogged } from '../store/userSlice'
 import showErrorMessage from '../utils/showErrorMessage'
 
