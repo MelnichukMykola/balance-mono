@@ -34,7 +34,7 @@ const AuthProvider = ({ children }) => {
 
   const handleSignIn = async data => {
     console.log('sign-in')
-    dispatch(setStatusLoading('loading'))
+    // dispatch(setStatusLoading('loading'))
     try {
       const res = await AuthClient.post('/sign-in', data)
       const { accessToken, accessTokenExpiration } = res.data
