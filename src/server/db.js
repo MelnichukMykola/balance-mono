@@ -1,11 +1,15 @@
 import pg from "pg";
+import dotenv from 'dotenv'
+dotenv.config()
+
+console.log(process.env)
 
 const pool = new pg.Pool({
-  user: "balance_mono_db_user",
-  password: "0WzGbzTmqZTuMIAMWGGia6CZ4XpSAhxq",
-  host: "dpg-cpng4sg8fa8c73b0q0a0-a.oregon-postgres.render.com",
-  port: 5432,
-  database: "balance_mono_db",
+  user: process.env.VITE_USER,
+  password: process.env.VITE_PASSWORD,
+  host: process.env.VITE_HOST,
+  port: process.env.VITE_DB_PORT,
+  database: process.env.VITE_DATABASE,
   ssl: {
     rejectUnauthorized: false
   }
