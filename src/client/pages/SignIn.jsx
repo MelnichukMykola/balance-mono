@@ -27,7 +27,6 @@ export default function SignIn() {
 
   const onSubmit = async data => {
     dispatch(setUserName(data.userName))
-    localStorage.setItem('userName', data.userName)
     try {
       await handleSignIn(data)
       const token = await handleFetchProtected(data.userName)

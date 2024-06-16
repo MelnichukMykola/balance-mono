@@ -48,7 +48,7 @@ function App() {
 
   useEffect(() => {
     if (localStorage.getItem('userName')) {
-      dispatch(setStatusLoading('loading'));
+      // dispatch(setStatusLoading('loading'));
       const userName = localStorage.getItem('userName')
       getAppData(userName).then(res => {
         dispatch(rewriteTrackingStore(res.tracking))
@@ -57,6 +57,7 @@ function App() {
       })
     }
   }, [dispatch])
+  
 
   useEffect(() => {
     if (isUserLogged) {

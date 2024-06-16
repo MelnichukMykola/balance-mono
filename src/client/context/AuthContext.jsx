@@ -4,7 +4,7 @@ import { createContext, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import config from '../config'
 import inMemoryJWT from '../services/inMemoryJWT'
-import { handleFakeData } from '../store/trackingSlice'
+import { handleFakeData, setStatusLoading } from '../store/trackingSlice'
 import { toggleUserLogged } from '../store/userSlice'
 import showErrorMessage from '../utils/showErrorMessage'
 
@@ -34,6 +34,7 @@ const AuthProvider = ({ children }) => {
 
   const handleSignIn = async data => {
     console.log('sign-in')
+    dispatch(setStatusLoading('loading'))
     try {
       const res = await AuthClient.post('/sign-in', data)
       const { accessToken, accessTokenExpiration } = res.data
@@ -80,6 +81,7 @@ const AuthProvider = ({ children }) => {
   }
 
   const handleFetchProtected = async userName => {
+    localStorage.setItem('userName', userName)
     try {
       const response = await ResourceClient.get('/protected', {
         params: {
