@@ -16,7 +16,15 @@ const app = express()
 
 app.use(cookieParser())
 app.use(express.json())
-app.use(cors({ credentials: true, origin: process.env.VITE_CLIENT_URL }));
+
+
+const corsOptions = {
+  origin: [process.env.VITE_CLIENT_URL_DEV, process.env.VITE_CLIENT_URL_PROD],
+  optionsSuccessStatus: 200, 
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 app.use(
   Fingerprint({
