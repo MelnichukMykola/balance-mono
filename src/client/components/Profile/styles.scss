@@ -1,0 +1,136 @@
+$layout-breakpoint-esm: 354px;
+$layout-breakpoint-sm: 640px;
+$layout-breakpoint-md: 768px;
+$layout-breakpoint-lg: 1024px;
+$layout-breakpoint-xl: 1280px;
+$layout-breakpoint-2xl: 1536px;
+
+.background {
+  position: fixed;
+  top: 0px;
+  right: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: #f7f7f9;
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+  z-index: 2;
+}
+
+.bg-closed {
+  display: none;
+}
+
+.prf-closed {
+  display: none;
+}
+
+
+// nav
+.profile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  right: 0px;
+  bottom: 0;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  overflow-y: auto;
+  &-name {
+    font-size: 36px;
+    font-weight: 700;
+    word-wrap: break-word;
+    height: auto;
+    overflow-x: hidden;
+    margin-bottom: 10px;
+    z-index: 2;
+    flex: 0 0 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // ul
+  &-blocks {
+    flex: 0 0 70%;
+    width: 90%;
+    padding: 0px 5% 0px 5%;
+    z-index: inherit;
+  }
+  // li
+  &-block {
+    list-style: none;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: column;
+    background-color: #49464d;
+    color: white;
+    width: 100%;
+    border-radius: 10px;
+    padding: 15px 0 15px 0;
+    z-index: inherit;
+  }
+  &-title {
+    
+  }
+}
+
+@media (min-width: $layout-breakpoint-esm) {
+  .background {
+    width: 325px;
+  }
+  .profile {
+    width: 325px;
+  }
+}
+
+@media (min-width: $layout-breakpoint-sm) {
+  .background {
+    width: 330px;
+  }
+  .profile {
+    width: 330px;
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .background {
+    width: 335px;
+  }
+  .profile {
+    width: 335px;
+  }
+}
+
+@media (min-width: $layout-breakpoint-lg) {
+  .background {
+    width: 345px;
+  }
+  .profile {
+    width: 345px;
+  }
+}
+
+@media (min-width: $layout-breakpoint-xl) {
+  .background {
+    width: 355px;
+  }
+  .profile {
+    width: 355px;
+  }
+}
+
+@media (min-width: $layout-breakpoint-2xl) {
+  .background {
+    width: 360px;
+  }
+  .profile {
+    width: 360px;
+  }
+}

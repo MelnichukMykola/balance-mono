@@ -1,0 +1,184 @@
+$layout-breakpoint-esm: 354px;
+$layout-breakpoint-sm: 640px;
+$layout-breakpoint-md: 768px;
+$layout-breakpoint-lg: 1024px;
+$layout-breakpoint-xl: 1280px;
+$layout-breakpoint-2xl: 1536px;
+
+.content {
+  // width: 100%;
+  // height: 800px;
+  overflow-y: auto;
+  &__chart {
+    height: 250px;
+  }
+  &__table {
+    margin-bottom: 10px;
+  }
+}
+
+.table-container {
+  overflow: auto;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.charts {
+  overflow-y: auto;
+  padding: 0 20px 0 20px;
+  &__line {
+    height: 250px;
+  }
+  &__mixed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 20px 0;
+    flex-direction: column;
+    &_line {
+      width: 100%;
+      height: 300px;
+    }
+    &_pie {
+      width: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-esm) {
+  .content {
+    &__chart {
+    }
+    &__table {
+    }
+  }
+  .table {
+  }
+  .charts {
+    &__line {
+    }
+    &__mixed {
+      &_line {
+      }
+      &_pie {
+        width: 60%;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-sm) {
+  .content {
+    &__chart {
+    }
+    &__table {
+    }
+  }
+  .table {
+  }
+  .charts {
+    &__line {
+    }
+    &__mixed {
+      &_line {
+      }
+      &_pie {
+        width: 55%;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .content {
+    &__chart {
+    }
+    &__table {
+    }
+  }
+  .table {
+  }
+  .charts {
+    &__line {
+    }
+    &__mixed {
+      &_line {
+      }
+      &_pie {
+        width: 55%;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-lg) {
+  .content {
+    &__chart {
+      height: 300px;
+    }
+    &__table {
+    }
+  }
+  .table {
+  }
+  .charts {
+    &__line {
+    }
+    &__mixed {
+      flex-direction: row;
+      &_line {
+        width: 70%;
+        height: 300px;
+      }
+      &_pie {
+        width: 25%;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-xl) {
+  .content {
+    &__chart {
+    }
+    &__table {
+    }
+  }
+  .table {
+  }
+  .charts {
+    &__line {
+    }
+    &__mixed {
+      &_line {
+      }
+      &_pie {
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-2xl) {
+  .content {
+    &__chart {
+    }
+    &__table {
+    }
+  }
+  .table {
+  }
+  .charts {
+    &__line {
+    }
+    &__mixed {
+      &_line {
+      }
+      &_pie {
+      }
+    }
+  }
+}
