@@ -12,6 +12,7 @@ import { fetchBankInfo } from '../store/trackingSlice'
 import { setUserName } from '../store/userSlice'
 import './styles.scss'
 import { signUpSchema } from './validationSchemas'
+import { GoArrowLeft } from 'react-icons/go'
 
 const items = [
   {
@@ -33,8 +34,9 @@ const items = [
               за цим посиланням
             </a>{' '}
             і натиснути на QR-код aбо його відсканувати. Вас перекине в mono,
-            вам потрібно погодитись і зайти знову на сайт, натиснути червону кнопку активувати і скопіювати Ваш
-            токен-моно і вставити в поле зверху.
+            вам потрібно погодитись і зайти знову на сайт, натиснути червону
+            кнопку активувати і скопіювати Ваш токен-моно і вставити в поле
+            зверху.
             <br />
             <span className='warning'>
               P.S. Не переживайте. Ваші дані в безпеці
@@ -120,6 +122,10 @@ export default function SignUp() {
           </Button>
         </div>
       </div>
+      <Link to='/home' className='form-to-home'>
+        <GoArrowLeft size='26' />
+        <p>На головну сторінку</p>
+      </Link>
     </form>
   )
 }

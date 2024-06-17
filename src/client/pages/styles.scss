@@ -15,6 +15,17 @@ $layout-breakpoint-2xl: 1536px;
   height: 100vh;
   overflow-y: auto;
   background-image: -webkit-linear-gradient(208deg, #d99c9d, #8677d9 51%, #6072cc);
+  position: relative;
+  &-to-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    color: white;
+    font-weight: 700;
+  }
   &-container {
     width: 90%;
     border-radius: 30px;

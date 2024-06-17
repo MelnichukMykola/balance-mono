@@ -1,7 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useContext } from 'react'
 import { useForm } from 'react-hook-form'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from '../components/Button/Button'
 import Field from '../components/Field/Field'
@@ -10,7 +10,7 @@ import { fetchBankInfo } from '../store/trackingSlice'
 import { setUserName } from '../store/userSlice'
 import './styles.scss'
 import { signInSchema } from './validationSchemas'
-
+import { GoArrowLeft } from 'react-icons/go'
 
 const defaultValues = {
   userName: '',
@@ -18,10 +18,7 @@ const defaultValues = {
 }
 
 export default function SignIn() {
-  const { 
-    handleSignIn,
-    handleFetchProtected,
-   } = useContext(AuthContext)
+  const { handleSignIn, handleFetchProtected } = useContext(AuthContext)
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
@@ -79,6 +76,10 @@ export default function SignIn() {
           </Button>
         </div>
       </div>
+        <Link to='/home' className='form-to-home'>
+          <GoArrowLeft size='26' />
+          <p>На головну сторінку</p>
+        </Link>
     </form>
   )
 }

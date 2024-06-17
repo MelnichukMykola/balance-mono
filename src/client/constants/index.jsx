@@ -4,20 +4,6 @@ export const options = {
   maintainAspectRatio: false,
   responsive: true,
   aspectRatio: 5,
-  // scales: {
-  //   y: {
-  //     stacked: true,
-  //     grid: {
-  //       display: true,
-  //       color: 'rgba(255,99,132,0.2)',
-  //     },
-  //   },
-  //   x: {
-  //     grid: {
-  //       display: false,
-  //     },
-  //   },
-  // },
   plugins: {
     legend: {
       position: 'top',
@@ -79,7 +65,7 @@ export function getOptions(
   labels
 ) {
   const dataForPie = {
-    labels: ['Incomes', 'Expenses'],
+    labels: ['Expenses', 'Incomes'],
     datasets: [
       {
         label: 'Total',
@@ -98,15 +84,15 @@ export function getOptions(
         fill: true,
         label: 'Incomes',
         data: dailyIncome,
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: 'rgb(53, 162, 235)',
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
       },
       {
         fill: true,
         label: 'Expenses',
         data: dailyExpenses,
-        borderColor: 'rgb(53, 162, 235)',
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
     ],
   }
@@ -117,14 +103,14 @@ export function getOptions(
       {
         label: 'Incomes',
         data: dailyIncome,
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: 'rgb(53, 162, 235)',
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
       },
       {
         label: 'Expenses',
         data: dailyExpenses,
-        borderColor: 'rgb(53, 162, 235)',
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
     ],
   }

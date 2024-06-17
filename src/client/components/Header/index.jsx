@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import ProfileContainer from '../../containers/ProfileContainer'
 import './styles.scss'
 
-const Header = ({ page, handleLogOut, isUserLogged, isOpen, toggleOpen }) => {
+const Header = ({ page, handleLogOut, isUserLogged, isOpen, toggleOpen, dataLoaded }) => {
   return (
     <div className='header'>
       <div className='header-left'>
