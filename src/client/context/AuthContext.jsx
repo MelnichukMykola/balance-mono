@@ -51,16 +51,14 @@ const AuthProvider = ({ children }) => {
   const handleLogOut = async () => {
     console.log('log-out')
     localStorage.removeItem('userName')
+    dispatch(toggleUserLogged(false))
+    dispatch(handleFakeData())
     try {
       await AuthClient.post('/logout')
         .then(() => {
-          dispatch(toggleUserLogged(false))
-          dispatch(handleFakeData())
           inMemoryJWT.deleteToken()
-          setData()
         })
         .catch(showErrorMessage)
-      dispatch(handleFakeData())
     } catch (error) {}
   }
 
@@ -122,7 +120,7 @@ const AuthProvider = ({ children }) => {
         dispatch(toggleUserLogged(true))
       })
       .catch(() => {
-        dispatch(toggleUserLogged(false))
+        // dispatch(toggleUserLogged(false))
       })
   })
 

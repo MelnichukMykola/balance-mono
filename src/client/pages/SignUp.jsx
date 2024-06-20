@@ -9,7 +9,7 @@ import Button from '../components/Button/Button'
 import Field from '../components/Field/Field'
 import { AuthContext } from '../context/AuthContext'
 import { fetchBankInfo } from '../store/trackingSlice'
-import { setUserName } from '../store/userSlice'
+import { setUserName, toggleUserLogged } from '../store/userSlice'
 import './styles.scss'
 import { signUpSchema } from './validationSchemas'
 import { GoArrowLeft } from 'react-icons/go'
@@ -63,8 +63,8 @@ export default function SignUp() {
     try {
       await handleSignUp(data)
       dispatch(fetchBankInfo(data.token))
+      dispatch(toggleUserLogged(true))
       navigate('/home')
-      console.log('click')
     } catch (error) {
       console.error('Authentication failed', error)
     }

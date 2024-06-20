@@ -14,6 +14,3 @@ CREATE TABLE refresh_sessions(
 
 SELECT * FROM users;
 SELECT * FROM refresh_sessions;
-
--- DROP TABLE refresh_sessions -- delete table
--- DELETE FROM users -- clear from table

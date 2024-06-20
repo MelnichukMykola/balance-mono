@@ -14,19 +14,15 @@ class AppDataRepository {
   }
 
   static async addAppData(data) {
-    const { userName, store } = data
-    await pool.query(
-      'INSERT INTO app_data (name, data) VALUES ($1, $2) RETURNING *',
-      [userName, JSON.stringify(store)]
-    )
+    const { userName, store } = data;
+    await pool.query(`
+      INSERT INTO app_data (name, data)
+      VALUES ($1, $2)
+      ON CONFLICT (name) DO UPDATE
+      SET data = $2
+      RETURNING *;
+    `, [userName, JSON.stringify(store)]);
   }
-
-  // static async deleteRefreshSession(refreshToken) {
-  //   await pool.query(
-  //     'DELETE FROM refresh_sessions WHERE refresh_token=$1',
-  //     [refreshToken]
-  //   )
-  // }
 }
 
 export default AppDataRepository

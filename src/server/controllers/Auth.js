@@ -72,7 +72,6 @@ class AuthController {
   static async refresh(req, res) {
     const { fingerprint } = req
     const currentRefreshToken = req.cookies.refreshToken
-    console.log(currentRefreshToken)
     try {
       const { accessToken, refreshToken, accessTokenExpiration } =
         await AuthService.refresh({

@@ -14,7 +14,6 @@ import TransactionsPage from './pages/TransactionsPage'
 import { selectStore, selectTracking, selectUser } from './store/selectors.js'
 import {
   defineLabels,
-  fetchBankInfo,
   rewriteTrackingStore,
   setDailyExpenses,
   setDailyIncome,
@@ -39,7 +38,12 @@ function App() {
 
   useEffect(() => {
     dataLoaded && handleSendingData({ userName, store })
+    console.log('data', dataLoaded)
   }, [dataLoaded])
+
+  useEffect(() => {
+    console.log('user', isUserLogged)
+  }, [isUserLogged])
 
   const getAppData = async userName => {
     const store = await handleFetchAppDataProtected(userName)
@@ -48,12 +52,11 @@ function App() {
 
   useEffect(() => {
     if (localStorage.getItem('userName')) {
-      // dispatch(setStatusLoading('loading'));
+      dispatch(setStatusLoading('loading'))
       const userName = localStorage.getItem('userName')
       getAppData(userName).then(res => {
         dispatch(rewriteTrackingStore(res.tracking))
         dispatch(rewriteUserStore(res.user))
-        // dispatch(setStatusLoading('idle'));
       })
     }
   }, [dispatch])
