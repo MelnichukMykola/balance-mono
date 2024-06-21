@@ -7,8 +7,10 @@ function TransactionsPage() {
   return (
     <div className='transactions-page'>
       <HeaderContainer page='transactions' />
-      <ContentContainer transactionsOnFullDisplay='true' />
-      <FooterContainer />
+      <div className='overflowed-wrapper'>
+        <ContentContainer transactionsOnFullDisplay='true' />
+        <FooterContainer />
+      </div>
     </div>
   )
 }
