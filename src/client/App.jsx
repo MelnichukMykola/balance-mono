@@ -38,12 +38,7 @@ function App() {
 
   useEffect(() => {
     dataLoaded && handleSendingData({ userName, store })
-    console.log('data', dataLoaded)
   }, [dataLoaded])
-
-  useEffect(() => {
-    console.log('user', isUserLogged)
-  }, [isUserLogged])
 
   const getAppData = async userName => {
     const store = await handleFetchAppDataProtected(userName)
