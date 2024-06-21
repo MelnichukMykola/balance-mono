@@ -9,8 +9,10 @@ function ChartsPage() {
   return (
     <div className='charts-page'>
       <HeaderContainer page='charts' />
-      <ContentContainer chartsOnFullDisplay='true' />
-      <FooterContainer />
+      <div className='overflowed-container'>
+        <ContentContainer chartsOnFullDisplay='true' />
+        <FooterContainer />
+      </div>
     </div>
   )
 }

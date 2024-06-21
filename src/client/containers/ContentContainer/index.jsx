@@ -28,7 +28,7 @@ const ContentContainer = ({
     labels
   )
 
-  const { width, height } = useWindowDimensions()
+  const { height } = useWindowDimensions()
 
   useEffect(() => {
     setSmallPageSize(Math.floor(height / 150))

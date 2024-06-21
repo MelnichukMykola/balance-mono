@@ -6,9 +6,7 @@ $layout-breakpoint-xl: 1280px;
 $layout-breakpoint-2xl: 1536px;
 
 .content {
-  // width: 100%;
-  // height: 800px;
-  overflow-y: auto;
+  
   &__chart {
     height: 250px;
   }
@@ -18,13 +16,11 @@ $layout-breakpoint-2xl: 1536px;
 }
 
 .table-container {
-  overflow: auto;
   width: 100%;
   margin-bottom: 20px;
 }
 
 .charts {
-  overflow-y: auto;
   padding: 0 20px 0 20px;
   &__line {
     height: 250px;
@@ -46,6 +42,18 @@ $layout-breakpoint-2xl: 1536px;
       align-items: center;
     }
   }
+}
+
+.column__amount {
+  font-weight: bold;
+}
+
+.column__amount_income {
+  color: rgb(21, 210, 21);
+}
+
+.column__amount_expense {
+  color: rgb(211, 21, 21);
 }
 
 @media (min-width: $layout-breakpoint-esm) {

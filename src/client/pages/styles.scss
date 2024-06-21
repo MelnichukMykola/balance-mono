@@ -114,12 +114,8 @@ $layout-breakpoint-2xl: 1536px;
   overflow: hidden; 
 }
 
-.home-page {
-  // overflow-y: auto; 
-}
-
-.transactions-page {
-  // overflow-y: auto; 
+.overflowed-container {
+  overflow-y: auto;
 }
 
 @media (min-width: $layout-breakpoint-esm) {

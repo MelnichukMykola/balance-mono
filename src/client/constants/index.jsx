@@ -28,9 +28,11 @@ export const columns = [
     render: (text, { tags }) => {
       let classname = ''
       if (tags[0] === 'income') {
-        classname = 'text-green-400'
+        classname = 'column__amount_income'
+      } else {
+        classname = 'column__amount_expense'
       }
-      return <p className={`${classname} font-bold`}>{text}</p>
+      return <p className={`${classname} column__amount`}>{text}</p>
     },
   },
   {
