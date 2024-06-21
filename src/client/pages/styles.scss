@@ -112,10 +112,6 @@ $layout-breakpoint-2xl: 1536px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden; 
-}
-
-.overflowed-container {
   overflow-y: auto;
 }
 
