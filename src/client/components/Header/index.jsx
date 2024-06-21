@@ -48,7 +48,7 @@ const Header = ({ page, handleLogOut, isUserLogged, isOpen, toggleOpen, dataLoad
               onClick={() => handleLogOut()}
               className='header-right_logout'
             >
-              <CiLogout size='1.6em' />
+              <CiLogout size='1.6em' color='black' />
             </button>
             <div className='header-right_btn'>
               <Hamburger toggled={isOpen} toggle={toggleOpen} size='30' onClick={handleClick}/>
