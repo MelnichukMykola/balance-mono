@@ -9,12 +9,12 @@ import { toggleUserLogged } from '../store/userSlice'
 import showErrorMessage from '../utils/showErrorMessage'
 
 export const AuthClient = axios.create({
-  baseURL: `${import.meta.env.VITE_CLIENT_URL_DEV}/auth`,
+  baseURL: `${import.meta.env.VITE_CLIENT_URL_PROD}/auth`,
   withCredentials: true,
 })
 
 const ResourceClient = axios.create({
-  baseURL: `${import.meta.env.VITE_CLIENT_URL_DEV}/resource`,
+  baseURL: `${import.meta.env.VITE_CLIENT_URL_PROD}/resource`,
 })
 
 export const AuthContext = createContext({})
