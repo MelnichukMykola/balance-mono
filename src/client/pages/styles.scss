@@ -76,25 +76,26 @@ $layout-breakpoint-2xl: 1536px;
   }
   &-user_name {
     font-size: 18px;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
   }
   &-user_password  {
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-top: 15px;
   }
   &-user_token {
     font-size: 18px;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
+    margin-top: 20px;
   }
   &-info {
     font-size: 22px;
-    margin-bottom: 10px;
     border-radius: 10px;
     background-color: #f1f4f5;
     color: #fff;
+    margin-top: 20px;
   }
   &-btn {
-    font-size: 24px;
+    margin-top: 15px;
   }
 }
 
@@ -112,7 +113,7 @@ $layout-breakpoint-2xl: 1536px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-y: none;
+  // overflow-y: none;
 }
 
 .overflowed-wrapper {

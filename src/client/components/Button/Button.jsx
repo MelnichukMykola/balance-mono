@@ -1,8 +1,8 @@
 import { memo } from "react";
 import './styles.scss'
 
-export default memo(({ children, ...rest }) => (
-  <button {...rest} className='button'>
+export default memo(({ children, classNames, ...rest }) => (
+  <button {...rest} className={`${classNames} button`}>
     {children}
   </button>
 ));

@@ -71,7 +71,7 @@ export default function SignIn() {
             helperText={errors.password?.message}
             className='form-user_password'
           />
-          <Button disabled={isSubmitting} type='submit' className='form-btn'>
+          <Button disabled={isSubmitting} type='submit' classNames='form-btn'>
             Увійти
           </Button>
         </div>

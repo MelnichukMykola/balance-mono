@@ -117,7 +117,7 @@ export default function SignUp() {
             className='form-user_token'
           />
           <Menu mode='inline' items={items} className='form-info' />
-          <Button disabled={isSubmitting} type='submit' className='form-btn'>
+          <Button disabled={isSubmitting} type='submit' classNames='form-btn'>
             Зареєструватися
           </Button>
         </div>
