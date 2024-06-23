@@ -11,11 +11,8 @@ const variants = {
   },
 }
 
-
-
-export const MenuItems = ({ info, infoNames}) => (
+export const MenuItems = ({ info, infoNames }) => (
   <>
-
     <motion.ul variants={variants} className='profile-blocks'>
       {info.map((item, i) => (
         <MenuItem i={i} key={i} item={item} infoNames={infoNames} />
@@ -23,4 +20,3 @@ export const MenuItems = ({ info, infoNames}) => (
     </motion.ul>
   </>
 )
-

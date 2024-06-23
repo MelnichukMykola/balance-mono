@@ -2,7 +2,7 @@ import Hamburger from 'hamburger-react'
 import React from 'react'
 import { CiLogout } from 'react-icons/ci'
 import { Link } from 'react-router-dom'
-import ProfileContainer from '../../containers/ProfileContainer'
+import SideBarContainer from '../../containers/SideBarContainer'
 import './styles.scss'
 
 const Header = ({ page, handleLogOut, isUserLogged, isOpen, toggleOpen, dataLoaded }) => {
@@ -10,7 +10,7 @@ const Header = ({ page, handleLogOut, isUserLogged, isOpen, toggleOpen, dataLoad
     <div className='header'>
       <div className='header-left'>
         <div className='header-left__title'>Balance</div>
-        <nav>
+        {/* <nav>
           <ul className='header-nav'>
             <li className={page === 'home' ? `header-nav_active` : ''}>
               <Link to='/home'>Home</Link>
@@ -22,7 +22,7 @@ const Header = ({ page, handleLogOut, isUserLogged, isOpen, toggleOpen, dataLoad
               <Link to='/charts'>Charts</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
       </div>
       <div className='header-right'>
         {!isUserLogged && (
@@ -46,7 +46,7 @@ const Header = ({ page, handleLogOut, isUserLogged, isOpen, toggleOpen, dataLoad
             <div className='header-right_btn'>
               <Hamburger toggled={isOpen} toggle={toggleOpen} size='30'/>
             </div>
-            <ProfileContainer />
+            <SideBarContainer />
           </>
         )}
       </div>

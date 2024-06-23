@@ -20,6 +20,7 @@ import {
   setStatusLoading,
 } from './store/trackingSlice.js'
 import { rewriteUserStore } from './store/userSlice.js'
+import ProfilePage from './pages/ProfilePage.jsx'
 
 function App() {
   const { transactions, statusLoading, dataLoaded, labels } =
@@ -81,6 +82,7 @@ function App() {
             <Route path='charts' element={<ChartsPage />} />
             <Route path='sign-in' element={<SignIn />} />
             <Route path='sign-up' element={<SignUp />} />
+            <Route path='profile' element={<ProfilePage />} />
             <Route path='*' element={<Navigate to={'home'} />} />
           </Routes>
         </BrowserRouter>

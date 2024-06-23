@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useDimensions } from '../../hooks/use-dimensions'
-import Profile from '../../components/Profile/Profile'
 import { AuthContext } from '../../context/AuthContext'
-import { selectTracking, selectUser } from '../../store/selectors'
+// import { selectTracking, selectUser } from '../../store/selectors'
+import SideBar from '../../components/SideBar/SideBar'
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -51,64 +51,77 @@ const variantsForItem = {
   },
 }
 
-const infoNames = [
-  'Total Income',
-  'Total Expenses',
-  'Total Balance',
-  "Today's Income",
-  "Today's Expense",
-]
+// const infoNames = [
+//   'Total Income',
+//   'Total Expenses',
+//   'Total Balance',
+//   "Today's Income",
+//   "Today's Expense",
+// ]
 
-const ProfileContainer = () => {
-  const { balance, income, expenses, dailyIncome, dailyExpenses } =
-    useSelector(selectTracking)
-  const { userName } = useSelector(selectUser)
+const SideBarContainer = () => {
+  // const { balance, income, expenses, dailyIncome, dailyExpenses } =
+    // useSelector(selectTracking)
+  // const { userName } = useSelector(selectUser)
   const containerRef = useRef(null)
   const { height } = useDimensions(containerRef)
   const { isOpen, toggleOpen } = useContext(AuthContext)
   const [bgClasses, setBgClasses] = useState('bg-closed')
   const [profileClasses, setProfileClasses] = useState('prf-closed')
 
+  const path = window.location.pathname
+  const lastSegmentOfPath = path.substring(path.lastIndexOf('/') + 1);
+
   useEffect(() => {
     if (!isOpen) {
-      setProfileClasses('prf-closed')
-      setBgClasses('bg-closed')
+      setProfileClasses('sidebar_closed')
+      setBgClasses('bg_closed')
     } else {
-      setProfileClasses('profile')
-      setBgClasses('background')
+      setProfileClasses('sidebar')
+      setBgClasses('sidebar-bg')
     }
   }, [isOpen])
 
-  const info = [
-    income,
-    expenses,
-    balance,
-    dailyIncome[dailyIncome.length - 1],
-    dailyExpenses[dailyExpenses.length - 1],
+  // const info = [
+  //   income,
+  //   expenses,
+  //   balance,
+  //   dailyIncome[dailyIncome.length - 1],
+  //   dailyExpenses[dailyExpenses.length - 1],
+  // ]
+
+  const pages = [
+    'home',
+    'transactions',
+    'charts',
+    'profile'
   ]
 
   return (
     <>
-      <Profile
-        balance={balance}
-        income={income}
-        expenses={expenses}
-        dailyIncome={dailyIncome}
-        dailyExpenses={dailyExpenses}
-        info={info}
-        infoNames={infoNames}
+      <SideBar
+        // balance={balance}
+        // income={income}
+        // expenses={expenses}
+        // dailyIncome={dailyIncome}
+        // dailyExpenses={dailyExpenses}
+        // info={info}
+        // infoNames={infoNames}
+        // userName={userName}
+        toggleOpen={toggleOpen}
         sidebar={sidebar}
         variants={variants}
         variantsForItem={variantsForItem}
         isOpen={isOpen}
         containerRef={containerRef}
         height={height}
-        userName={userName}
         bgClasses={bgClasses}
         profileClasses={profileClasses}
+        pages={pages}
+        route={lastSegmentOfPath}
       />
     </>
   )
 }
 
-export default ProfileContainer
+export default SideBarContainer
