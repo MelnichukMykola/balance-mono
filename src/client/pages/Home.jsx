@@ -7,10 +7,8 @@ function Home() {
   return (
     <div className='home-page'>
       <HeaderContainer page='home' />
-      <div className='overflowed-wrapper'>
-        <ContentContainer />
-        <FooterContainer />
-      </div>
+      <ContentContainer />
+      <FooterContainer />
     </div>
   )
 }

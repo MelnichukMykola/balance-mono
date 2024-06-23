@@ -1,4 +1,28 @@
+import { QuestionCircleOutlined } from '@ant-design/icons'
+import { Menu } from 'antd'
 import './styles.scss'
+
+const items = [
+  {
+    label: 'Про що цей сайт?',
+    key: 'SubMenu',
+    icon: <QuestionCircleOutlined style={{ color: 'red' }} />,
+    children: [
+      {
+        type: 'group',
+        label: (
+          <span className='content__info_text'>
+            Сайт дозволяє вам переглянути свою виписку в зручному вигляді
+            транзакцій і графіків. Спочатку ви бачите тестові дані, щоб ви
+            зрозуміли як це взагалі працює, але... але, щоб побачити свої дані
+            вам потрібно зареєструватися або увійти.
+            <br />
+          </span>
+        ),
+      },
+    ],
+  },
+]
 
 const Content = ({
   transactions,
@@ -14,22 +38,23 @@ const Content = ({
   Line,
   largePageSize,
   smallPageSize,
+  isUserLogged,
 }) => {
   return (
     <>
       {transOnFullDisplay && (
         <div className='table-container'>
-            <Table
-              columns={columns}
-              pagination={{
-                pageSize: largePageSize,
-                position: ['topMiddle'],
-                showSizeChanger: false,
-              }}
-              size='small'
-              dataSource={transactions}
-              scroll={{ x: 'max-content' }}
-            />
+          <Table
+            columns={columns}
+            pagination={{
+              pageSize: largePageSize,
+              position: ['topMiddle'],
+              showSizeChanger: false,
+            }}
+            size='small'
+            dataSource={transactions}
+            scroll={{ x: 'max-content' }}
+          />
         </div>
       )}
       {chartsOnFullDisplay && (
@@ -49,6 +74,9 @@ const Content = ({
       )}
       {!transOnFullDisplay && !chartsOnFullDisplay && (
         <div className='content'>
+          {!isUserLogged && (
+            <Menu mode='inline' items={items} className='content__info' />
+          )}
           <div className='content__chart'>
             <Line data={data} options={options} />
           </div>

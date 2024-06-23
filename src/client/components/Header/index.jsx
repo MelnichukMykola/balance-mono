@@ -4,15 +4,8 @@ import { CiLogout } from 'react-icons/ci'
 import { Link } from 'react-router-dom'
 import ProfileContainer from '../../containers/ProfileContainer'
 import './styles.scss'
-import { useDispatch } from 'react-redux'
-import { toggleUserLogged } from '../../store/userSlice'
 
 const Header = ({ page, handleLogOut, isUserLogged, isOpen, toggleOpen, dataLoaded }) => {
-  const dispatch = useDispatch()
-  const handleClick = () => {
-    dispatch(toggleUserLogged(true))
-  }
-
   return (
     <div className='header'>
       <div className='header-left'>
@@ -48,10 +41,10 @@ const Header = ({ page, handleLogOut, isUserLogged, isOpen, toggleOpen, dataLoad
               onClick={() => handleLogOut()}
               className='header-right_logout'
             >
-              <CiLogout size='1.6em' color='black' />
+              <CiLogout size='2em' color='black' />
             </button>
             <div className='header-right_btn'>
-              <Hamburger toggled={isOpen} toggle={toggleOpen} size='30' onClick={handleClick}/>
+              <Hamburger toggled={isOpen} toggle={toggleOpen} size='30'/>
             </div>
             <ProfileContainer />
           </>

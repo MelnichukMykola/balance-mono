@@ -6,12 +6,17 @@ $layout-breakpoint-xl: 1280px;
 $layout-breakpoint-2xl: 1536px;
 
 .content {
-  
   &__chart {
     height: 250px;
   }
   &__table {
     margin-bottom: 10px;
+  }
+  &__info {
+    font-size: 22px;
+    &_text {
+      font-size: 20px;
+    }
   }
 }
 

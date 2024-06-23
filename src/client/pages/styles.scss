@@ -116,10 +116,6 @@ $layout-breakpoint-2xl: 1536px;
   // overflow-y: none;
 }
 
-.overflowed-wrapper {
-  // overflow-y: auto;
-}
-
 @media (min-width: $layout-breakpoint-esm) {
   .form {
     &-content {

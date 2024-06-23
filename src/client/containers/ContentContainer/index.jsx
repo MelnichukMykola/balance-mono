@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 import useWindowDimensions from '../../hooks/useWindowDimensions.jsx'
 import Content from '../../components/Content'
 import { columns, getOptions, options } from '../../constants/index'
-import { selectTracking } from '../../store/selectors'
+import { selectTracking, selectUser } from '../../store/selectors'
 
 Chart.register(...registerables)
 
@@ -19,6 +19,7 @@ const ContentContainer = ({
   const [largePageSize, setLargePageSize] = useState(12)
   const { labels, dailyIncome, dailyExpenses, transactions, expenses, income } =
     useSelector(selectTracking)
+    const { isUserLogged } = useSelector(selectUser)
 
   const { data, dataArea, dataForPie } = getOptions(
     income,
@@ -52,6 +53,7 @@ const ContentContainer = ({
         Table={Table}
         largePageSize={largePageSize}
         smallPageSize={smallPageSize}
+        isUserLogged={isUserLogged}
       />
     </>
   )

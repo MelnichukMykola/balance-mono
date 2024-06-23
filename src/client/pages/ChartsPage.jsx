@@ -7,10 +7,8 @@ function ChartsPage() {
   return (
     <div className='charts-page'>
       <HeaderContainer page='charts' />
-      <div className='overflowed-wrapper'>
-        <ContentContainer chartsOnFullDisplay='true' />
-        <FooterContainer />
-      </div>
+      <ContentContainer chartsOnFullDisplay='true' />
+      <FooterContainer />
     </div>
   )
 }

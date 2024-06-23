@@ -19,8 +19,10 @@ ul, li, ol {
   list-style: none;
 }
 
-.app {
-  
+ul,
+li {
+  margin: 0;
+  padding: 0;
 }
 
 .loader-icon {
@@ -29,10 +31,4 @@ ul, li, ol {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-ul,
-li {
-  margin: 0;
-  padding: 0;
 }
