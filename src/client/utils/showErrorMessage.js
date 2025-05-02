@@ -1,4 +1,8 @@
 import { enqueueSnackbar } from "notistack";
 
-export default (error) =>
-  enqueueSnackbar(error.response.data.error, { variant: "error" });
+export default (error) => {
+  const message =
+    error?.response?.data?.error || error?.message || "Unknown error occurred";
+
+  enqueueSnackbar(message, { variant: "error" });
+};

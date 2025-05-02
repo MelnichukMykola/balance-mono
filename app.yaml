@@ -1,0 +1,15 @@
+runtime: nodejs18
+
+entrypoint: npm start
+
+env_variables:
+  MONGO_URI: "mongodb+srv://koliamelnichuk37:k9TM29imdb@balance-mono-db.w60dbw0.mongodb.net/?retryWrites=true&w=majority&appName=balance-mono-db"
+  PORT: 8080
+
+automatic_scaling:
+  max_instances: 3
+
+handlers:
+  - url: /.*
+    script: npm start
+    secure: optional

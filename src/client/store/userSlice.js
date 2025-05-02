@@ -1,29 +1,29 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isUserLogged: false,
-  userName: '',
-}
+  userName: "",
+};
 
 const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState,
   reducers: {
     toggleUserLogged: (state, action) => {
-      state.isUserLogged = action.payload
+      state.isUserLogged = action.payload;
     },
     setUserName: (state, action) => {
-      state.userName = action.payload
+      state.userName = action.payload;
     },
     rewriteUserStore: (state, action) => {
-      state.userName = action.payload.userName
-      state.isUserLogged = action.payload.isUserLogged
+      state.userName = action.payload.userName;
+      state.isUserLogged = action.payload.isUserLogged;
     },
   },
-})
+});
 
-const { reducer } = userSlice
-export default reducer
+const { reducer } = userSlice;
+export default reducer;
 
 export const { toggleUserLogged, setUserName, rewriteUserStore } =
-  userSlice.actions
+  userSlice.actions;

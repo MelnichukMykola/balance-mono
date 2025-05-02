@@ -1,4 +1,4 @@
-import { Tag } from 'antd'
+import { Tag } from "antd";
 
 export const options = {
   maintainAspectRatio: false,
@@ -6,59 +6,59 @@ export const options = {
   aspectRatio: 5,
   plugins: {
     legend: {
-      position: 'top',
+      position: "top",
     },
     title: {
       display: true,
-      text: 'Chart For Month',
+      text: "Chart For Month",
     },
   },
-}
+};
 
 export const columns = [
   {
-    title: 'Description',
-    dataIndex: 'description',
-    key: 'Description',
+    title: "Description",
+    dataIndex: "description",
+    key: "Description",
   },
   {
-    title: 'Amount',
-    dataIndex: 'amount',
-    key: 'amount',
+    title: "Amount",
+    dataIndex: "amount",
+    key: "amount",
     render: (text, { tags }) => {
-      let classname = ''
-      if (tags[0] === 'income') {
-        classname = 'column__amount_income'
+      let classname = "";
+      if (tags[0] === "income") {
+        classname = "column__amount_income";
       } else {
-        classname = 'column__amount_expense'
+        classname = "column__amount_expense";
       }
-      return <p className={`${classname} column__amount`}>{text}</p>
+      return <p className={`${classname} column__amount`}>{text}</p>;
     },
   },
   {
-    title: 'Date',
-    dataIndex: 'date',
-    key: 'date',
+    title: "Date",
+    dataIndex: "date",
+    key: "date",
   },
   {
-    title: 'Tags',
-    key: 'tags',
-    dataIndex: 'tags',
+    title: "Tags",
+    key: "tags",
+    dataIndex: "tags",
     render: (_, { tags }) => (
       <>
-        {tags.map(tag => {
-          let color = tag === 'income' ? 'green' : 'red'
+        {tags.map((tag) => {
+          let color = tag === "income" ? "green" : "red";
 
           return (
             <Tag color={color} key={tag}>
               {tag.toUpperCase()}
             </Tag>
-          )
+          );
         })}
       </>
     ),
   },
-]
+];
 export function getOptions(
   income,
   expenses,
@@ -67,65 +67,65 @@ export function getOptions(
   labels
 ) {
   const dataForPie = {
-    labels: ['Expenses', 'Incomes'],
+    labels: ["Expenses", "Incomes"],
     datasets: [
       {
-        label: 'Total',
+        label: "Total",
         data: [(income / 100).toFixed(2), (expenses / 100).toFixed(2)],
-        backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgba(53, 162, 235, 0.5)'],
-        borderColor: ['rgb(255, 99, 132)', 'rgb(53, 162, 235)'],
+        backgroundColor: ["rgba(255, 99, 132, 0.5)", "rgba(53, 162, 235, 0.5)"],
+        borderColor: ["rgb(255, 99, 132)", "rgb(53, 162, 235)"],
         borderWidth: 1,
       },
     ],
-  }
+  };
 
   const dataArea = {
     labels,
     datasets: [
       {
         fill: true,
-        label: 'Incomes',
+        label: "Incomes",
         data: dailyIncome,
-        borderColor: 'rgb(53, 162, 235)',
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        borderColor: "rgb(53, 162, 235)",
+        backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
       {
         fill: true,
-        label: 'Expenses',
+        label: "Expenses",
         data: dailyExpenses,
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
     ],
-  }
+  };
 
   const data = {
     labels,
     datasets: [
       {
-        label: 'Incomes',
+        label: "Incomes",
         data: dailyIncome,
-        borderColor: 'rgb(53, 162, 235)',
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        borderColor: "rgb(53, 162, 235)",
+        backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
       {
-        label: 'Expenses',
+        label: "Expenses",
         data: dailyExpenses,
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
     ],
-  }
+  };
 
-  return { data, dataForPie, dataArea }
+  return { data, dataForPie, dataArea };
 }
 
 export function countPeriod() {
-  const lastDate = new Date()
-  const firstDate = new Date(lastDate)
-  firstDate.setMonth(lastDate.getMonth() - 1)
+  const lastDate = new Date();
+  const firstDate = new Date(lastDate);
+  firstDate.setMonth(lastDate.getMonth() - 1);
 
-  const currLabels = []
+  const currLabels = [];
 
   for (
     let date = new Date(firstDate);
@@ -134,39 +134,39 @@ export function countPeriod() {
   ) {
     const formattedDate = `${String(date.getMonth() + 1).padStart(
       2,
-      '0'
-    )}-${String(date.getDate()).padStart(2, '0')}`
-    currLabels.push(formattedDate)
+      "0"
+    )}-${String(date.getDate()).padStart(2, "0")}`;
+    currLabels.push(formattedDate);
   }
 
-  return currLabels
+  return currLabels;
 }
 function defineArraysForChart(transactions, labels) {
-  let array = []
+  let array = [];
   for (let i = 0; i < labels.length; i++) {
-    let allAmount = 0
-    transactions.forEach(item => {
+    let allAmount = 0;
+    transactions.forEach((item) => {
       if (item.date.slice(5, 10) === labels[i]) {
-        let amount = Math.abs(parseFloat(item.amount))
-        allAmount += amount
+        let amount = Math.abs(parseFloat(item.amount));
+        allAmount += amount;
       }
-    })
+    });
 
-    array.push(allAmount)
+    array.push(allAmount);
   }
-  return array
+  return array;
 }
 
 export function separateArraysForChart(transactions, labels, flag) {
   const expenses = transactions.filter(
-    transaction => parseFloat(transaction.amount) < 0
-  )
+    (transaction) => parseFloat(transaction.amount) < 0
+  );
   const incomes = transactions.filter(
-    transaction => parseFloat(transaction.amount) >= 0
-  )
-  if (flag === 'expenses') {
-    return defineArraysForChart(expenses, labels)
+    (transaction) => parseFloat(transaction.amount) >= 0
+  );
+  if (flag === "expenses") {
+    return defineArraysForChart(expenses, labels);
   } else {
-    return defineArraysForChart(incomes, labels)
+    return defineArraysForChart(incomes, labels);
   }
 }
