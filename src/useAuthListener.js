@@ -11,8 +11,6 @@ export const useAuthListener = () => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      // console.log("Auth state changed:", user);
-
       if (user) {
         try {
           const uid = user.uid;
