@@ -42,6 +42,7 @@ function App() {
       );
     }
   }, [transactions, dataLoaded, labels]);
+  
 
   if (statusLoading === "idle") {
     return (
