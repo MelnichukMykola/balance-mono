@@ -1,0 +1,305 @@
+$layout-breakpoint-esm: 354px;
+$layout-breakpoint-sm: 640px;
+$layout-breakpoint-md: 768px;
+$layout-breakpoint-lg: 1024px;
+$layout-breakpoint-xl: 1280px;
+$layout-breakpoint-2xl: 1536px;
+
+.header {
+  width: 100%;
+  padding: 15px 2px 15px 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 4px;
+    width: 60%;
+    &__title {
+      font-size: 20px;
+      margin-right: 12px;
+      margin-left: 5px;
+    }
+  }
+  &-nav {
+    display: flex;
+    font-size: 14px;
+    gap: 6px;
+    align-items: center;
+    flex-direction: column;
+    &_active {
+      padding: 5px;
+      background-color: #383a47;
+      border-radius: 16px;
+      color: white;
+    }
+  }
+  &-right {
+    display: flex;
+    margin-left: 4px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    &_logout {
+      padding-top: 3px;
+      cursor: pointer;
+      z-index: 4;
+      border: none;
+      background-color: inherit;
+    }
+    &_btn {
+      z-index: 4;
+    }
+    &__logo {
+      margin-left: 4px;
+      margin-right: 4px;
+      margin-bottom: 2px;
+      width: 48px;
+      height: 48px;
+      overflow: hidden;
+      border-radius: 9999px;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &-registration {
+    margin: 0 5px 0 5px;
+    gap: 10px;
+    display: flex;
+    z-index: 4;
+    font-size: 14px;
+  }
+  &-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f3;
+    border-radius: 10px;
+    padding: 4px;
+    cursor: pointer;
+    border: 1px solid #1a1a33;
+  }
+  &-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #1a1a33;
+    padding: 4px;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: $layout-breakpoint-esm) {
+  .header {
+    &-left {
+      width: auto;
+    }
+    &-nav {
+      margin-left: 30px;
+    }
+    &_logout {
+      margin-right: 5px;
+    }
+    &-registration {
+      margin: 0 10px 0 10px;
+      gap: 10px;
+      font-size: 15px;
+      display: flex;
+    }
+    &-login {
+      padding: 5px;
+    }
+    &-signup {
+      padding: 5px;
+    }
+  }
+}
+
+@media (min-width: 450px) {
+  .header {
+    &-nav {
+      flex-direction: row;
+      gap: 8;
+      margin-left: 0;
+    }
+    &-registration {
+      margin: 0 10px 0 10px;
+      gap: 10px;
+      font-size: 16px;
+    }
+    &-login {
+      padding: 5px;
+    }
+    &-signup {
+      padding: 5px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-sm) {
+  .header {
+    &-nav {
+      flex-direction: row;
+    }
+    &-left {
+      &__title {
+        margin-right: 20px;
+      }
+    }
+    &-nav {
+      font-size: 15px;
+      gap: 4px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-md) {
+  .header {
+    &-left {
+      &__title {
+        font-size: 22px;
+        margin-right: 40px;
+        margin-left: 30px;
+      }
+    }
+    &-nav {
+      font-size: 16px;
+      gap: 6px;
+    }
+    &-right {
+      &__logo {
+        margin-left: 8px;
+        width: 56px;
+        height: 56px;
+      }
+    }
+    &-registration {
+      margin: 0 20px 0 20px;
+      gap: 10px;
+      font-size: 17px;
+    }
+    &-login {
+      padding: 7px;
+    }
+    &-signup {
+      padding: 7px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-lg) {
+  .header {
+    &-left {
+      &__title {
+        font-size: 24px;
+        margin-right: 60px;
+      }
+    }
+    &-nav {
+      font-size: 17px;
+      gap: 9px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-xl) {
+  .header {
+    &-left {
+      &__title {
+        font-size: 26px;
+        margin-right: 80px;
+      }
+    }
+    &-nav {
+      font-size: 18px;
+      gap: 10px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-2xl) {
+  .header {
+    &-left {
+      &__title {
+        font-size: 28px;
+        margin-right: 100px;
+      }
+    }
+  }
+}
+
+.burger-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  &.closed {
+    transform: translateX(-100%);
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 2px;
+    border-bottom: 1px solid #e2e2e2;
+  }
+
+  &__title {
+    font-size: 24px;
+    margin-left: 30px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+
+    .burger-logout {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+  }
+
+  .burger-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    font-size: 22px;
+    margin-top: 60px;
+
+    a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: #727171;
+      }
+    }
+  }
+}
