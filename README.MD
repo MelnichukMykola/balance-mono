@@ -39,8 +39,8 @@
 ### 1. Клонування репозиторію
 
 ```bash
-git clone https://github.com/futdevelop/emea_SAF-T.git
-cd emea-saft
+git clone https://github.com/futdevelop/balance-mono.git
+cd balance-mono
 ```
 
 ### 2. Встановлення залежностей
