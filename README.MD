@@ -1,11 +1,11 @@
 # 💰 Balance Mono
 
 **Balance Mono** — is a personal finance tracker that helps you easily monitor your income and expenses, and visualize financial statistics using charts.
-This project was built as a learning-oriented fullstack application with Firebase authentication and Monobank API integration.
+This project was built as a learning-oriented full-stack application with Firebase authentication and Monobank API integration.
 
 ## 🔗 Live Demo
 
-[Click here to view the live site](https://futdevelop.github.io/balance-mono/#/home)
+[Click here to view the live site](https://melnichukmykola.github.io/balance-mono/#/home)
 
 ## 🛠️ Key Features
 
@@ -13,7 +13,7 @@ This project was built as a learning-oriented fullstack application with Firebas
 🏷️ Add income and expenses with tags
 📈 Dynamic monthly financial charts
 🔎 Filter and paginate transactions
-📦 Integration with Monobank using token
+📦 Integration with Monobank using a token
 📱 Fully responsive design (mobile to desktop)
 
 ## 🛠️ Technologies Used
@@ -34,7 +34,7 @@ This project was built as a learning-oriented fullstack application with Firebas
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/futdevelop/balance-mono.git
+git clone https://github.com/melnichukmykola/balance-mono.git
 cd balance-mono
 ```
 
