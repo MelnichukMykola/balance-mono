@@ -38,19 +38,19 @@ git clone https://github.com/futdevelop/balance-mono.git
 cd balance-mono
 ```
 
-### 2. Run in development mode
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Build for production
+### 3. Run in development mode
 
 ```bash
 npm run dev
 ```
 
-### 3. Продакшн збірка
+### 3. Build for production
 
 ```bash
 npm run build
