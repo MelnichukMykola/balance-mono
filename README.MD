@@ -1,25 +1,20 @@
 # 💰 Balance Mono
 
-**Balance Mono** — це персональний фінансовий трекер, який дозволяє зручно відстежувати доходи та витрати, а також візуалізувати фінансову статистику за допомогою графіків.
-Проєкт створений як навчальний Fullstack-додаток з авторизацією через Firebase та інтеграцією з Monobank API.
+**Balance Mono** — is a personal finance tracker that helps you easily monitor your income and expenses, and visualize financial statistics using charts.
+This project was built as a learning-oriented fullstack application with Firebase authentication and Monobank API integration.
 
 ## 🔗 Live Demo
 
 [Click here to view the live site](https://futdevelop.github.io/balance-mono/#/home)
 
-## 🛠️ Основні можливості
+## 🛠️ Key Features
 
-🔐 Реєстрація та вхід через Firebase Authentication
-
-🏷️ Додавання доходів та витрат із тегами
-
-📈 Динамічні графіки фінансових змін за місяць
-
-🔎 Фільтрація та пагінація транзакцій
-
-📦 Інтеграція з Monobank через токен
-
-📱 Адаптивний дизайн (від мобільного до десктопу)
+🔐 Sign up and log in with Firebase Authentication
+🏷️ Add income and expenses with tags
+📈 Dynamic monthly financial charts
+🔎 Filter and paginate transactions
+📦 Integration with Monobank using token
+📱 Fully responsive design (mobile to desktop)
 
 ## 🛠️ Technologies Used
 
@@ -34,22 +29,22 @@
 - 🍔 Hamburger React
 - 🔔 Notistack
 
-## 🚀 Швидкий старт
+## 🚀 Quick Start
 
-### 1. Клонування репозиторію
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/futdevelop/balance-mono.git
 cd balance-mono
 ```
 
-### 2. Встановлення залежностей
+### 2. Run in development mode
 
 ```bash
 npm install
 ```
 
-### 3. Запуск у режимі розробки
+### 3. Build for production
 
 ```bash
 npm run dev
